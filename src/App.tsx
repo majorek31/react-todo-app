@@ -31,7 +31,7 @@ function App() {
   return (
     <CenteredBox>
       <Header todos={todos}/>
-      <div className="flex h-full">
+      <div className="lg:flex h-full">
         <TodoList todos={todos} onTaskDelete={removeTask}/>
         <Sidebar>
           <AddTaskForm onTaskAdd={addTask}/>

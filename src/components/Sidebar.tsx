@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
-type ListProps = {
+type SidebarProps = {
     children: ReactNode;
 };
 
-export default function Sidebar(props: ListProps) {
+export default function Sidebar(props: SidebarProps) {
     return (
-        <div className="w-1/3 h-full flex justify-between border-l-2 m-0">
+        <div className="lg:w-1/3 sm:w-full lg:h-full flex justify-between border-l-2 m-0">
             {props.children}
         </div>
     );

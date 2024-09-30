@@ -8,7 +8,7 @@ type TodoListProps = {
 
 export default function TodoList(props: TodoListProps) {
     return (
-        <div className="w-2/3 h-full flex flex-col pb-8 overflow-y-scroll custom-scrollbar">
+        <div className="lg:w-2/3 sm:w-full lg:h-full flex flex-col pb-8 overflow-y-scroll custom-scrollbar">
             {
                 props.todos.map(todo => <TodoEntry todo={todo} onTaskDelete={props.onTaskDelete}/>)
             }
