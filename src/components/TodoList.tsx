@@ -1,9 +1,7 @@
 import { useTodos } from "../contexts/TodoContext";
 import TodoEntry from "./TodoEntry";
 
-type TodoListProps = {};
-
-export default function TodoList(props: TodoListProps) {
+export default function TodoList() {
   const { state } = useTodos();
   const { todos } = state;
   return (

@@ -1,7 +1,6 @@
 import { useTodos } from "../contexts/TodoContext";
 import { Todo } from "../lib/Types";
 
-type HeaderProps = {};
 function countCompletedTasks(todos: Array<Todo>): number {
   let count = 0;
   for (const todo of todos) {
@@ -9,7 +8,7 @@ function countCompletedTasks(todos: Array<Todo>): number {
   }
   return count;
 }
-export default function Header(props: HeaderProps) {
+export default function Header() {
   const { state } = useTodos();
   const { todos } = state;
   return (

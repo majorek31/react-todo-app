@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useTodos } from "../contexts/TodoContext";
 
-type AddTaskFormProps = {};
-
-export default function AddTask(props: AddTaskFormProps) {
+export default function AddTask() {
   const { dispatch } = useTodos();
   const [task, setTask] = useState("");
   function onFormSubmit(e: React.FormEvent<HTMLFormElement>): void {
