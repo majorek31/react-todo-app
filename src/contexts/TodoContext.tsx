@@ -4,11 +4,10 @@ import { getNextTodoId } from "../lib/utilts";
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
-const initialState: TodoState = {
-  todos: [],
-};
-
-const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
+const todoReduceerDispatcher = (
+  state: TodoState,
+  action: TodoAction,
+): TodoState => {
   switch (action.type) {
     case "ADD_TODO":
       const newTodoId = getNextTodoId(state.todos);
@@ -37,12 +36,23 @@ const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
   }
 };
 
+const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
+  const dispatcherReponse = todoReduceerDispatcher(state, action);
+  window.localStorage.setItem("todos", JSON.stringify(dispatcherReponse));
+  return dispatcherReponse;
+};
+
 type TodoProviderProps = {
   children: ReactNode;
 };
 
 export const TodoProvider = ({ children }: TodoProviderProps) => {
-  const [state, dispatch] = useReducer(todoReducer, initialState);
+  const todosString = window.localStorage.getItem("todos");
+  const todos = todosString ? JSON.parse(todosString) : null;
+  const [state, dispatch] = useReducer(
+    todoReducer,
+    todos ? todos : ({ todos: [] } as TodoState),
+  );
 
   return (
     <TodoContext.Provider value={{ state, dispatch }}>
