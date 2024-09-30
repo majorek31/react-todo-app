@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { Todo } from "../lib/Types";
+import { useTodos } from "../contexts/TodoContext";
 
-type AddTaskFormProps = {
-    onTaskAdd: (todo: Todo) => void;
-};
+type AddTaskFormProps = {};
 
 export default function AddTask(props: AddTaskFormProps) {
+    const { dispatch } = useTodos();
     const [task, setTask] = useState('');
     function onFormSubmit(e: React.FormEvent<HTMLFormElement>): void {
         e.preventDefault();
-        props.onTaskAdd({name: task, completed: false});
+        dispatch({
+            type: "ADD_TODO",
+            payload: {
+                name: task,
+            }
+        });
         setTask("");
     }
     return (

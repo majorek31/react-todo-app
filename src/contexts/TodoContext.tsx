@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 import { TodoAction, TodoContextType, TodoState } from '../lib/Types';
+import { getNextTodoId } from "../lib/utilts";
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
@@ -10,14 +11,15 @@ const initialState : TodoState = {
 const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
     switch (action.type) {
         case "ADD_TODO":
+            const newTodoId = getNextTodoId(state.todos);
             return {
                 ...state,
-                todos: [...state.todos, action.payload]
+                todos: [...state.todos, {id: newTodoId, completed: false, name: action.payload.name}]
             };
         case "REMOVE_TODO":
             return {
                 ...state,
-                todos: state.todos.filter(todo => todo.id === action.payload)
+                todos: state.todos.filter(todo => todo.id !== action.payload)
             };
         case "TOOGLE_TODO":
             return {
