@@ -1,4 +1,4 @@
-import { Todo } from "../lib/Types";
+import { Todo } from "../lib/types";
 import TrashCan from "../assets/trash-can.svg";
 import { useTodos } from "../contexts/TodoContext";
 

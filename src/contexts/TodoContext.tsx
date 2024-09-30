@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
-import { TodoAction, TodoContextType, TodoState } from "../lib/Types";
+import { TodoAction, TodoContextType, TodoState } from "../lib/types";
 import { getNextTodoId } from "../lib/utilts";
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);

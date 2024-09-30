@@ -1,5 +1,5 @@
 import { useTodos } from "../contexts/TodoContext";
-import { Todo } from "../lib/Types";
+import { Todo } from "../lib/types";
 
 function countCompletedTasks(todos: Array<Todo>): number {
   let count = 0;

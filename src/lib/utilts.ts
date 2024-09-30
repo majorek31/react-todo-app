@@ -1,4 +1,4 @@
-import { Todo } from "./Types";
+import { Todo } from "./types";
 
 export const getNextTodoId = (todos: Todo[]): number => {
   if (todos.length === 0) return 1;
