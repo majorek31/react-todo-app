@@ -14,14 +14,12 @@ export default function AddTask(props: AddTaskFormProps) {
     }
     return (
         <div className="w-full flex justify-center p-2 border-b-2 pt-6">
-            <div className="flex flex-col justify-start items-center w-full">
-                <form onSubmit={onFormSubmit}>
-                    <label className="w-full">
-                        <input type="text" className="border-4 w-full" onChange={(e) => setTask(e.target.value)} value={task}/>
-                    </label>
-                    <button className="border-2 w-full m-2">Add this task</button>
-                </form>
-            </div>
+            <form className="flex flex-col justify-start items-center w-full" onSubmit={onFormSubmit}>
+                <label className="w-full">
+                    <input type="text" className="border-4 w-full" onChange={(e) => setTask(e.target.value)} value={task}/>
+                </label>
+                <button className="border-2 w-full m-2">Add this task</button>
+            </form>
         </div>
     );
 }
