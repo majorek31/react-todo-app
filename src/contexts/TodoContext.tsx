@@ -12,12 +12,11 @@ const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
   switch (action.type) {
     case "ADD_TODO":
       const newTodoId = getNextTodoId(state.todos);
+      const name = action.payload.name.trim();
+      if (name.length < 1) return state;
       return {
         ...state,
-        todos: [
-          ...state.todos,
-          { id: newTodoId, completed: false, name: action.payload.name },
-        ],
+        todos: [...state.todos, { id: newTodoId, completed: false, name }],
       };
     case "REMOVE_TODO":
       return {
