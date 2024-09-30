@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import { Todo } from "./lib/Types";
 import TodoList from "./components/TodoList";
 import Sidebar from "./components/Sidebar";
-import AddTask from "./components/AddTask";
+import AddTaskForm from "./components/AddTaskForm";
 
 const defaultTodos = [
   {
@@ -34,7 +34,7 @@ function App() {
       <div className="flex h-full">
         <TodoList todos={todos} onTaskDelete={removeTask}/>
         <Sidebar>
-          <AddTask onTaskAdd={addTask}/>
+          <AddTaskForm onTaskAdd={addTask}/>
         </Sidebar>
       </div>
     </CenteredBox>

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Todo } from "../lib/Types";
 
-type ListProps = {
+type AddTaskFormProps = {
     onTaskAdd: (todo: Todo) => void;
 };
 
-export default function AddTask(props: ListProps) {
+export default function AddTask(props: AddTaskFormProps) {
     const [task, setTask] = useState('');
     return (
         <div className="w-full flex justify-center p-2 border-b-2 pt-6">

@@ -1,6 +1,6 @@
 import { Todo } from "../lib/Types";
 
-type ListProps = {
+type HeaderProps = {
     todos: Array<Todo>
 }
 function countCompletedTasks(todos: Array<Todo>): number {
@@ -11,7 +11,7 @@ function countCompletedTasks(todos: Array<Todo>): number {
     }
     return count;
 }
-export default function Header(props: ListProps) {
+export default function Header(props: HeaderProps) {
   return (
     <header className="bg-gray-100 p-4 flex items-center justify-between">
         <p className="text-2xl">{countCompletedTasks(props.todos)}/{props.todos.length} Tasks</p>
