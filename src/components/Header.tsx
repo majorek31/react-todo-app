@@ -16,7 +16,10 @@ export default function Header() {
     <header className="bg-gray-100 p-4 flex items-center justify-between">
       <p className="text-2xl">
         <span className="font-bold text-green-500">{completedTasks}</span>/
-        {todos.length} Tasks ({todos.length - completedTasks} tasks left)
+        {todos.length} Tasks{" "}
+        <span className="max-lg:hidden">
+          ({todos.length - completedTasks} tasks left){" "}
+        </span>
       </p>
       <div className="flex items-center justify-between">
         <div className="w-5 h-5 bg-gray-400 rounded-xl"></div>

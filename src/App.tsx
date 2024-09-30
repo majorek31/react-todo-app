@@ -11,10 +11,10 @@ function App() {
       <CenteredBox>
         <Header />
         <div className="lg:flex h-full">
-          <TodoList />
           <Sidebar>
             <AddTaskForm />
           </Sidebar>
+          <TodoList />
         </div>
       </CenteredBox>
     </TodoProvider>
