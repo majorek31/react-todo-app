@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 type CenteredBoxProps = {
   children: ReactNode;
-}
+};
 
 export default function CenteredBox({ children }: CenteredBoxProps) {
   return (
@@ -11,5 +11,5 @@ export default function CenteredBox({ children }: CenteredBoxProps) {
         {children}
       </div>
     </div>
-    );
+  );
 }

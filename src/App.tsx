@@ -5,16 +5,15 @@ import Sidebar from "./components/Sidebar";
 import AddTaskForm from "./components/AddTaskForm";
 import { TodoProvider } from "./contexts/TodoContext";
 
-
 function App() {
   return (
     <TodoProvider>
       <CenteredBox>
-        <Header/>
+        <Header />
         <div className="lg:flex h-full">
-          <TodoList/>
+          <TodoList />
           <Sidebar>
-            <AddTaskForm/>
+            <AddTaskForm />
           </Sidebar>
         </div>
       </CenteredBox>
